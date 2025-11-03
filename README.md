@@ -36,17 +36,20 @@ Poetry Blogspot empowers every developer to find balance between **logic and art
 * Connect with like-minded devs, poets, and creators
 * Build friendships beyond syntax
 
-### 🧭 Personal Dashboard *(Coming Soon)*
+### 🧭 Personal Dashboard
 
 * Track your submitted poems and engagement
 * Edit your profile and bio
 * View your creative milestones
+* Guest view for non-logged-in users
 
 ### 🔐 Secure Authentication
 
 * Sign up with email and password
 * Password recovery system
 * Session persistence with localStorage
+* Redirect to profile page after successful login
+* Guest access to profile page with limited features
 
 ---
 
@@ -68,7 +71,7 @@ Every hover, shadow, and gradient reflects **creative flow** — a space where d
 ## 🧠 Built With
 
 * **HTML5** – semantic structure
-* **CSS3** – responsive layouts with flex & grid
+* **CSS3** – responsive layouts with flex & grid, dark mode support
 * **JavaScript (ES6+)** – interactivity & logic
 * **jQuery** – smooth DOM handling
 * **Local Storage API** – user session memory
