@@ -1,6 +1,1 @@
-- [x] Create auth.html page with signup and signin forms
-- [x] Add authentication styles to style.css
-- [x] Add authentication JavaScript functionality
-- [x] Update README.md with comprehensive project details
-- [ ] Test authentication page functionality
-- [ ] Push changes to main branch
+none
