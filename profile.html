@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>User Profile - Poetry Blogspot</title>
+		<!-- Google Fonts CDN Link -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- stylesheet -->
+		<link rel="stylesheet" href="style.css?v=2" />
+	</head>
+	<body>
+		<header
+			class="menu-wrapper"
+			style="
+				background: none !important;
+				border-bottom: none !important;
+				text-align: left !important;
+				position: absolute !important;
+				top: 0 !important;
+				left: 0 !important;
+				right: 0 !important;
+				padding: 20px !important;
+			"
+		>
+			<button
+				class="hamburger-menu"
+				aria-label="Toggle menu"
+				aria-expanded="false"
+			>
+				<span class="menu-burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+			<nav class="menu" role="navigation" aria-label="Main Menu">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#poetry">Poetry</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="profile.html" class="active">Profile</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="profile-section">
+			<div class="container">
+				<div class="profile-header">
+					<div class="profile-avatar">
+						<div class="avatar-circle">
+							<span id="avatarInitial">U</span>
+						</div>
+					</div>
+					<div class="profile-info">
+						<h1 id="userName">User Name</h1>
+						<p id="userEmail">user@example.com</p>
+						<div class="profile-stats">
+							<div class="stat">
+								<span class="stat-number" id="poemsCount">0</span>
+								<span class="stat-label">Poems</span>
+							</div>
+							<div class="stat">
+								<span class="stat-number" id="contributionsCount">0</span>
+								<span class="stat-label">Contributions</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="profile-content">
+					<div class="profile-tabs">
+						<button class="tab-btn active" data-tab="overview">Overview</button>
+						<button class="tab-btn" data-tab="poems">My Poems</button>
+						<button class="tab-btn" data-tab="settings">Settings</button>
+					</div>
+
+					<div class="tab-content">
+						<div id="overview" class="tab-pane active">
+							<div class="overview-grid">
+								<div class="overview-card">
+									<h3>Recent Activity</h3>
+									<div id="recentActivity" class="activity-list">
+										<p class="no-activity">No recent activity</p>
+									</div>
+								</div>
+								<div class="overview-card">
+									<h3>Profile Summary</h3>
+									<div class="profile-summary">
+										<p><strong>Member since:</strong> <span id="memberSince">Not available</span></p>
+										<p><strong>Last login:</strong> <span id="lastLogin">Just now</span></p>
+										<p><strong>Account status:</strong> <span class="status-active">Active</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="poems" class="tab-pane">
+							<div class="poems-section">
+								<h3>My Poems</h3>
+								<div id="userPoems" class="poems-list">
+									<p class="no-poems">No poems added yet</p>
+								</div>
+							</div>
+						</div>
+
+						<div id="settings" class="tab-pane">
+							<div class="settings-section">
+								<h3>Account Settings</h3>
+								<form id="profileForm" class="settings-form">
+									<div class="form-group">
+										<label for="editName">Full Name</label>
+										<input type="text" id="editName" name="name" required>
+									</div>
+									<div class="form-group">
+										<label for="editEmail">Email</label>
+										<input type="email" id="editEmail" name="email" required>
+									</div>
+									<div class="form-group">
+										<label for="editBio">Bio</label>
+										<textarea id="editBio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+									</div>
+									<div class="form-actions">
+										<button type="submit" class="save-btn">Save Changes</button>
+										<button type="button" class="logout-btn" onclick="logout()">Logout</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="main.js"></script>
+		<script src="profile.js"></script>
+	</body>
+</html>

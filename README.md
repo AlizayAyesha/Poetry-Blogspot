@@ -174,3 +174,8 @@ For questions, suggestions, or collaboration opportunities:
 ---
 
 *Made with ❤️ for the poetry community*
+### User Profile Pages
+- **Personal Dashboard**: View profile information, statistics, and recent activity
+- **Poems Management**: Display all user-submitted poems with timestamps
+- **Account Settings**: Edit profile information, bio, and account preferences
+- **Activity Tracking**: Recent contributions and engagement metrics

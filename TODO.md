@@ -1,6 +1,7 @@
-- [x] Create auth.html page with signup and signin forms
-- [x] Add authentication styles to style.css
-- [x] Add authentication JavaScript functionality
-- [x] Update README.md with comprehensive project details
-- [ ] Test authentication page functionality
+- [ ] Create profile.html page with user information display and edit functionality
+- [ ] Add profile styles to style.css
+- [ ] Add profile JavaScript functionality (profile.js)
+- [ ] Update navigation in index.html to include profile link
+- [ ] Update README.md with profile feature details
+- [ ] Test profile page functionality
 - [ ] Push changes to main branch
