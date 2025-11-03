@@ -14,41 +14,35 @@
 		<link rel="stylesheet" href="style.css?v=2" />
 	</head>
 	<body>
-		<header
-			class="menu-wrapper"
-			style="
-				background: none !important;
-				border-bottom: none !important;
-				text-align: left !important;
-				position: absolute !important;
-				top: 0 !important;
-				left: 0 !important;
-				right: 0 !important;
-				padding: 20px !important;
-			"
-		>
-			<button
-				class="hamburger-menu"
-				aria-label="Toggle menu"
-				aria-expanded="false"
-			>
-				<span class="menu-burger">
-					<span></span>
-					<span></span>
-					<span></span>
-				</span>
-			</button>
-			<nav class="menu" role="navigation" aria-label="Main Menu">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#poetry">Poetry</a></li>
-					<li><a href="#contact">Contact</a></li>
-<li><a href="profile.html">Profile</a></li>
-<li><a href="auth.html">Login</a></li>
+		<!-- Navbar -->
+		<nav class="navbar">
+			<div class="container">
+				<a href="#home"><span class="site-name">Poetry Blogspot</span></a>
+				<div class="menu-toggle" id="menuToggle">
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+				<ul class="navbar-list" id="navbarList">
+					<li><a href="#home" class="link active">Home</a></li>
+					<li><a href="#about" class="link">About</a></li>
+					<li><a href="#poetry" class="link">Poetry</a></li>
+					<li><a href="#contact" class="link">Contact</a></li>
+					<li><a href="profile.html" class="link">Profile</a></li>
+					<li><a href="auth.html" class="btn" id="login">Login</a></li>
+					<li>
+						<button id="theme-toggle" class="btn">🌙</button>
+					</li>
+					<li>
+						<select id="language-selector" class="btn">
+							<option value="en">EN</option>
+							<option value="es">ES</option>
+							<option value="fr">FR</option>
+						</select>
+					</li>
 				</ul>
-			</nav>
-		</header>
+			</div>
+		</nav>
 
 		<!-- Your hero section and content -->
 
@@ -79,6 +73,18 @@
 
 				<div class="poetry-controls">
 					<form class="poem-form" id="poemForm">
+						<select id="category" class="category-select">
+							<option value="motivation">Motivation</option>
+							<option value="love">Love</option>
+							<option value="nature">Nature</option>
+							<option value="life">Life</option>
+							<option value="other">Other</option>
+						</select>
+						<input
+							type="text"
+							id="tags"
+							placeholder="Tags (comma separated)"
+						/>
 						<input
 							type="text"
 							id="author"

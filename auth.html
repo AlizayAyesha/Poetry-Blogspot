@@ -8,6 +8,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html"><span class="site-name">Poetry Blogspot</span></a>
+            <div class="menu-toggle" id="menuToggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="navbar-list" id="navbarList">
+                <li><a href="index.html" class="link">Home</a></li>
+                <li><a href="#about" class="link">About</a></li>
+                <li><a href="#poetry" class="link">Poetry</a></li>
+                <li><a href="#contact" class="link">Contact</a></li>
+                <li><a href="profile.html" class="link">Profile</a></li>
+                <li><a href="auth.html" class="btn active" id="login">Signup</a></li>
+                <li>
+                    <button id="theme-toggle" class="btn">🌙</button>
+                </li>
+                <li>
+                    <select id="language-selector" class="btn">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="auth-container">
         <div class="auth-card">
             <div class="auth-header">
@@ -16,8 +46,8 @@
             </div>
 
             <div class="auth-tabs">
-                <button class="tab-btn active" onclick="showTab('signin')">Sign In</button>
-                <button class="tab-btn" onclick="showTab('signup')">Sign Up</button>
+                <button class="tab-btn active" style="color: #ffffff;" onclick="showTab('signin')">Sign In</button>
+                <button class="tab-btn" style="color: #ffffff;" onclick="showTab('signup')">Sign Up</button>
             </div>
 
             <!-- Sign In Form -->

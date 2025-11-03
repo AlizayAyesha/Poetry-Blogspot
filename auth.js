@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('current_user', JSON.stringify(user));
             showMessage('Sign in successful! Redirecting...', 'success');
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'profile.html';
             }, 1500);
         } else {
             showMessage('Invalid email or password', 'error');
@@ -148,9 +148,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    // Check if user is already logged in
-    const currentUser = localStorage.getItem('current_user');
-    if (currentUser) {
-        window.location.href = 'index.html';
-    }
+
 });

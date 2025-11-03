@@ -1,12 +1,5 @@
 // Profile page functionality
 $(document).ready(function() {
-    // Check if user is logged in
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (!currentUser) {
-        window.location.href = 'auth.html';
-        return;
-    }
-
     // Initialize profile
     loadUserProfile();
     loadUserPoems();
@@ -33,35 +26,55 @@ $(document).ready(function() {
 });
 
 function loadUserProfile() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const userData = users.find(u => u.email === currentUser.email);
+    const currentUser = JSON.parse(localStorage.getItem('current_user'));
+    let userData = null;
 
-    if (userData) {
-        $('#userName').text(userData.name || 'User');
-        $('#userEmail').text(userData.email);
-        $('#editName').val(userData.name || '');
-        $('#editEmail').val(userData.email);
-        $('#editBio').val(userData.bio || '');
-
-        // Set avatar initial
-        const initial = (userData.name || 'U').charAt(0).toUpperCase();
-        $('#avatarInitial').text(initial);
-
-        // Member since
-        const memberSince = userData.createdAt ? new Date(userData.createdAt).toLocaleDateString() : 'Not available';
-        $('#memberSince').text(memberSince);
-
-        // Last login
-        const lastLogin = userData.lastLogin ? new Date(userData.lastLogin).toLocaleString() : 'Just now';
-        $('#lastLogin').text(lastLogin);
+    if (currentUser) {
+        const users = JSON.parse(localStorage.getItem('poetry_users')) || [];
+        userData = users.find(u => u.email === currentUser.email);
     }
+
+    // Default profile data if no user is logged in
+    const defaultData = {
+        name: 'Guest User',
+        email: 'guest@example.com',
+        bio: '',
+        createdAt: new Date().toISOString(),
+        lastLogin: new Date().toISOString()
+    };
+
+    const profileData = userData || defaultData;
+
+    $('#userName').text(profileData.name || 'Guest User');
+    $('#userEmail').text(profileData.email);
+    $('#editName').val(profileData.name || '');
+    $('#editEmail').val(profileData.email);
+    $('#editBio').val(profileData.bio || '');
+
+    // Set avatar initial
+    const initial = (profileData.name || 'G').charAt(0).toUpperCase();
+    $('#avatarInitial').text(initial);
+
+    // Member since
+    const memberSince = profileData.createdAt ? new Date(profileData.createdAt).toLocaleDateString() : 'Today';
+    $('#memberSince').text(memberSince);
+
+    // Last login
+    const lastLogin = profileData.lastLogin ? new Date(profileData.lastLogin).toLocaleString() : 'Just now';
+    $('#lastLogin').text(lastLogin);
 }
 
 function loadUserPoems() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(localStorage.getItem('current_user'));
     const poems = JSON.parse(localStorage.getItem('poems')) || [];
-    const userPoems = poems.filter(p => p.author === currentUser.email);
+    let userPoems = [];
+
+    if (currentUser) {
+        userPoems = poems.filter(p => p.author === currentUser.email);
+    } else {
+        // For guest users, show some sample poems or empty
+        userPoems = [];
+    }
 
     $('#poemsCount').text(userPoems.length);
 
@@ -75,13 +88,22 @@ function loadUserPoems() {
         `).join('');
 
         $('#userPoems').html(poemsHtml);
+    } else {
+        $('#userPoems').html('<p class="no-poems">No poems added yet</p>');
     }
 }
 
 function loadRecentActivity() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(localStorage.getItem('current_user'));
     const poems = JSON.parse(localStorage.getItem('poems')) || [];
-    const userPoems = poems.filter(p => p.author === currentUser.email);
+    let userPoems = [];
+
+    if (currentUser) {
+        userPoems = poems.filter(p => p.author === currentUser.email);
+    } else {
+        // For guest users, no activity
+        userPoems = [];
+    }
 
     if (userPoems.length > 0) {
         const recentPoems = userPoems.slice(-5).reverse(); // Get last 5 poems, most recent first
@@ -96,39 +118,65 @@ function loadRecentActivity() {
         `).join('');
 
         $('#recentActivity').html(activityHtml);
+    } else {
+        $('#recentActivity').html('<p class="no-activity">No recent activity</p>');
     }
 }
 
 function updateUserProfile() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const userIndex = users.findIndex(u => u.email === currentUser.email);
+    const currentUser = JSON.parse(localStorage.getItem('current_user'));
 
-    if (userIndex !== -1) {
-        users[userIndex].name = $('#editName').val().trim();
-        users[userIndex].email = $('#editEmail').val().trim();
-        users[userIndex].bio = $('#editBio').val().trim();
-        users[userIndex].lastLogin = new Date().toISOString();
+    if (currentUser) {
+        const users = JSON.parse(localStorage.getItem('poetry_users')) || [];
+        const userIndex = users.findIndex(u => u.email === currentUser.email);
 
-        // Update current user session
-        const updatedUser = users[userIndex];
-        localStorage.setItem('currentUser', JSON.stringify({
-            email: updatedUser.email,
-            name: updatedUser.name
-        }));
-        localStorage.setItem('users', JSON.stringify(users));
+        if (userIndex !== -1) {
+            users[userIndex].name = $('#editName').val().trim();
+            users[userIndex].email = $('#editEmail').val().trim();
+            users[userIndex].bio = $('#editBio').val().trim();
+            users[userIndex].lastLogin = new Date().toISOString();
+
+            // Update current user session
+            const updatedUser = users[userIndex];
+            localStorage.setItem('current_user', JSON.stringify({
+                email: updatedUser.email,
+                name: updatedUser.name
+            }));
+            localStorage.setItem('poetry_users', JSON.stringify(users));
+
+            // Show success message
+            showMessage('Profile updated successfully!', 'success');
+
+            // Reload profile data
+            loadUserProfile();
+        }
+    } else {
+        // For guest users, just update the display temporarily
+        const guestName = $('#editName').val().trim();
+        const guestEmail = $('#editEmail').val().trim();
+        const guestBio = $('#editBio').val().trim();
+
+        $('#userName').text(guestName || 'Guest User');
+        $('#userEmail').text(guestEmail || 'guest@example.com');
+
+        // Set avatar initial
+        const initial = (guestName || 'G').charAt(0).toUpperCase();
+        $('#avatarInitial').text(initial);
 
         // Show success message
-        showMessage('Profile updated successfully!', 'success');
-
-        // Reload profile data
-        loadUserProfile();
+        showMessage('Profile updated temporarily (guest mode)!', 'success');
     }
 }
 
 function logout() {
-    if (confirm('Are you sure you want to logout?')) {
-        localStorage.removeItem('currentUser');
+    const currentUser = JSON.parse(localStorage.getItem('current_user'));
+    if (currentUser) {
+        if (confirm('Are you sure you want to logout?')) {
+            localStorage.removeItem('current_user');
+            window.location.href = 'index.html';
+        }
+    } else {
+        // For guest users, just redirect to home
         window.location.href = 'index.html';
     }
 }
