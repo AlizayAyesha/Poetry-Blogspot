@@ -1,0 +1,7 @@
+- [x] Update CSS colors to gray theme (change orange accents to gray shades)
+- [x] Fix parallax effect in main.js (ensure smooth scrolling and correct class usage)
+- [x] Test changes by opening index.html in browser
+- [x] Update About section background to gray
+- [x] Update Poetry wall background to gray
+- [x] Update Collaboration section background to gray
+- [x] Change remaining orange colors to gray shades in CSS

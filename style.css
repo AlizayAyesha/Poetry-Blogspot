@@ -10,7 +10,7 @@ html{
 }
 
 body {
-    background-color: #666262;
+    background-color: #423d3d;
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
@@ -88,7 +88,7 @@ header.menu-wrapper {
     display: block;
     width: 28px;
     height: 3px;
-    background-color: #ffffff;
+    background-color: #645d5d;
     margin: 5px 0;
     transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
     border-radius: 2px;
@@ -155,19 +155,19 @@ h2:hover + .circle {
 .content {
     width: 100%;
     padding: 36px 20px;
-    background-color: #666262;
+    background-color: #423d3d;
 }
 
 .content h2 {
     margin-bottom: 20px;
-    color: #df731b;
+    color: #c9691a;
     font-size: 32px;
     font-weight: 500;
     text-align: center;
 }
 
 .content p {
-    color: #dad9d9;
+    color: #000000;
     font-size: 16px;
     font-weight: 300;
     text-align: justify;
@@ -180,7 +180,7 @@ h2:hover + .circle {
 .poetry-section {
     width: 100%;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #c9691a 0%, #df731b 50%, #582b05 100%);
+    background: linear-gradient(135deg, #fa5102ef 0%, #ffdb65e5 50%, #ecf45bcb 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,7 +208,7 @@ h2:hover + .circle {
 }
 
 .poetry-card {
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(59, 58, 58, 0.98);
     border-radius: 20px;
     padding: 40px 30px;
     box-shadow: 0 20px 60px rgba(88, 43, 5, 0.4);
@@ -292,7 +292,7 @@ h2:hover + .circle {
 }
 
 .poem-text {
-    color: #2c3e50;
+    color: #ffffff;
     line-height: 2;
     font-size: 16px;
     font-weight: 400;
@@ -325,7 +325,7 @@ h2:hover + .circle {
 
 .poem-text .signature {
     font-family: 'Courier New', monospace;
-    color: #7f8c8d;
+    color: #fae05b;
     font-size: 14px;
     margin-top: 30px;
     padding-top: 20px;
@@ -345,7 +345,7 @@ h2:hover + .circle {
 
 .code-icon {
     font-size: 60px;
-    color: rgba(223, 115, 27, 0.25);
+    color: #df731b;
     font-family: 'Courier New', monospace;
     line-height: 1;
     font-weight: bold;
@@ -365,7 +365,7 @@ h2:hover + .circle {
 .contact-section {
     width: 100%;
     padding: 80px 20px;
-    background-color: #666262;
+    background-color: #423d3d;
 }
 
 .contact-container {
@@ -512,21 +512,21 @@ footer > p {
 }
 
 .about-section {
-    background: linear-gradient(180deg, #fffaf6 0%, #fff7f1 100%);
+    background: linear-gradient(180deg, #e6750c 0%, #e96868 100%);
     color: #2c2c2c;
     padding: 4rem 1.5rem;
     border-radius: 16px;
     margin: 3rem auto;
     max-width: 1100px;
     box-shadow: 0 10px 30px rgba(88, 43, 5, 0.08);
-    border: 1px solid rgba(223, 115, 27, 0.06);
+    border: 1px solid rgba(128, 128, 128, 0.06);
     text-align: center;
 }
 
 .about-intro h2 {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #df731b;
+    color: #000000;
     margin-bottom: 0.5rem;
 }
 
@@ -553,7 +553,7 @@ footer > p {
     padding: 0.8rem 1rem;
     border-radius: 10px;
     border: 2px solid rgba(223, 115, 27, 0.18);
-    background: #fff;
+    background: #585656;
     font-size: 1rem;
     min-width: 240px;
     transition: all 0.25s ease;
@@ -565,8 +565,8 @@ footer > p {
 }
 
 .poem-form button {
-    background: linear-gradient(90deg, #df731b, #c9691a, #582b05);
-    color: #fff;
+    background:#f94614af;
+    color: #000000;
     border: none;
     padding: 0.8rem 1.4rem;
     border-radius: 10px;
@@ -577,11 +577,11 @@ footer > p {
 
 .poem-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(223, 115, 27, 0.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 .collab-form button {
-    background: linear-gradient(90deg, #df731b, #c9691a, #582b05);
-    color: #fff;
+    background: #f94614af;
+    color: #000000;
     border: none;
     padding: 0.8rem 1.4rem;
     border-radius: 10px;
@@ -592,7 +592,7 @@ footer > p {
 
 .collab-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(223, 115, 27, 0.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .poetry-wall {
@@ -603,7 +603,7 @@ footer > p {
 }
 
 .poem-card {
-    background: #fff;
+    background: #f94614af;
     border-radius: 14px;
     border: 1px solid rgba(223, 115, 27, 0.15);
     padding: 1.4rem;
@@ -621,15 +621,16 @@ footer > p {
 
 .poem-card blockquote {
     font-style: italic;
-    color: #333;
+    color: #faf393;
     line-height: 1.6;
     margin: 0;
 }
 
 .poem-card footer {
     margin-top: 0.8rem;
+    background-color: rgba(235, 10, 10, 0.439);
     font-weight: 700;
-    color: #df731b;
+    color: #ebe489;
     font-size: 0.95rem;
     text-align: right;
 }
@@ -648,8 +649,8 @@ footer > p {
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #fff7f0;
-    color: #333;
+    background-color: #494444;
+    color: #000000;
     line-height: 1.6;
 }
 
@@ -674,12 +675,12 @@ header p {
 .about {
     padding: 60px 20px;
     text-align: center;
-    background-color: #fff3e0;
+    background-color: #ee930099;
 }
 
 .about h2 {
     font-size: 2.5rem;
-    color: #ff8c42;
+    color: #080808;
     margin-bottom: 20px;
 }
 
@@ -692,7 +693,7 @@ header p {
 }
 
 footer {
-    background-color: grey;
+    background-color: #c9691a;
     color: #222;
     text-align: center;
     padding: 20px;
@@ -702,25 +703,25 @@ footer {
 
 footer span {
     font-weight: 700;
-    color: #ff7043;
+    color: #000000;
 }
 
 footer a {
     text-decoration: none;
-    color: #ff7043;
+    color: #0a0909;
 }
 
 /* Collaboration section styles */
 .collab-section {
     padding: 48px 20px;
-    background: linear-gradient(180deg, #fffaf6 0%, #fff7f1 100%);
+    background: linear-gradient(180deg, #db5614 0%, #f58e8e 100%);
     border-radius: 12px;
     margin: 2.5rem auto;
     max-width: 1100px;
     box-shadow: 0 10px 30px rgba(88,43,5,0.06);
 }
 .collab-section h2 {
-    color: #df731b;
+    color: #020201;
     font-size: 2rem;
     margin-bottom: 8px;
 }
@@ -744,12 +745,12 @@ footer a {
 .collab-form textarea { min-height: 100px; }
 .collab-list { display: grid; gap: 12px; }
 .collab-card {
-    background: #fff;
+    background: #424040;
     border: 1px solid rgba(223,115,27,0.08);
     padding: 12px;
     border-radius: 8px;
 }
-.collab-card .name { font-weight: 700; color: #c9691a; }
+.collab-card .name { font-weight: 700; color: #f09b55; }
 .collab-card .role { color: #555; margin-bottom: 6px; }
 .collab-card .notes { color: #333; font-size: 0.95rem; }
 .collab-card .remove-btn { background: transparent; border: none; color: #c02626; cursor: pointer; float: right; }

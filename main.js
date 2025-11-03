@@ -19,7 +19,7 @@ $(document).ready(function () {
     // Parallax effect on background image
     $(window).on("scroll", function() {
         var scrollTop = $(this).scrollTop();
-        $(".hero-background img").css('transform', 'translateY(' + -(scrollTop * 0.5) + 'px)');
+        $(".Parallax").css('transform', 'translateY(' + -(scrollTop * 0.5) + 'px)');
     });
 });
 
