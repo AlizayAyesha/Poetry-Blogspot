@@ -1243,8 +1243,9 @@ footer > p {
 .profile-section {
     padding: 120px 20px 60px;
     min-height: 100vh;
+}
 
-.profile-header {
+.profile-section .profile-header {
     display: flex;
     align-items: center;
     gap: 30px;
@@ -1255,11 +1256,11 @@ footer > p {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-.profile-avatar {
+.profile-section .profile-header .profile-avatar {
     flex-shrink: 0;
 }
 
-.avatar-circle {
+.profile-section .profile-header .profile-avatar .avatar-circle {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -1273,53 +1274,53 @@ footer > p {
     box-shadow: 0 5px 15px rgba(201, 105, 26, 0.3);
 }
 
-.profile-info h1 {
+.profile-section .profile-header .profile-info h1 {
     color: #333;
     margin-bottom: 5px;
     font-size: 2rem;
 }
 
-.profile-info p {
+.profile-section .profile-header .profile-info p {
     color: #666;
     margin-bottom: 15px;
     font-size: 1.1rem;
 }
 
-.profile-stats {
+.profile-section .profile-header .profile-stats {
     display: flex;
     gap: 30px;
 }
 
-.stat {
+.profile-section .profile-header .profile-stats .stat {
     text-align: center;
 }
 
-.stat-number {
+.profile-section .profile-header .profile-stats .stat .stat-number {
     display: block;
     font-size: 1.8rem;
     font-weight: 700;
     color: #c9691a;
 }
 
-.stat-label {
+.profile-section .profile-header .profile-stats .stat .stat-label {
     color: #666;
     font-size: 0.9rem;
 }
 
-.profile-content {
+.profile-section .profile-content {
     background: white;
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-.profile-tabs {
+.profile-section .profile-content .profile-tabs {
     display: flex;
     border-bottom: 2px solid #f0f0f0;
     margin-bottom: 30px;
 }
 
-.tab-btn {
+.profile-section .profile-content .profile-tabs .tab-btn {
     padding: 12px 24px;
     border: none;
     background: transparent;
@@ -1330,48 +1331,48 @@ footer > p {
     transition: all 0.3s ease;
 }
 
-.tab-btn.active {
+.profile-section .profile-content .profile-tabs .tab-btn.active {
     color: #c9691a;
     border-bottom-color: #c9691a;
 }
 
-.tab-btn:hover {
+.profile-section .profile-content .profile-tabs .tab-btn:hover {
     color: #c9691a;
 }
 
-.tab-pane {
+.profile-section .profile-content .tab-pane {
     display: none;
 }
 
-.tab-pane.active {
+.profile-section .profile-content .tab-pane.active {
     display: block;
 }
 
-.overview-grid {
+.profile-section .profile-content .tab-pane .overview-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
-.overview-card {
+.profile-section .profile-content .tab-pane .overview-grid .overview-card {
     padding: 20px;
     border: 1px solid #f0f0f0;
     border-radius: 10px;
     background: #fafafa;
 }
 
-.overview-card h3 {
+.profile-section .profile-content .tab-pane .overview-grid .overview-card h3 {
     color: #333;
     margin-bottom: 15px;
     font-size: 1.3rem;
 }
 
-.activity-list {
+.profile-section .profile-content .tab-pane .overview-grid .overview-card .activity-list {
     max-height: 300px;
     overflow-y: auto;
 }
 
-.activity-item {
+.profile-section .profile-content .tab-pane .overview-grid .overview-card .activity-list .activity-item {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -1379,11 +1380,11 @@ footer > p {
     border-bottom: 1px solid #f0f0f0;
 }
 
-.activity-item:last-child {
+.profile-section .profile-content .tab-pane .overview-grid .overview-card .activity-list .activity-item:last-child {
     border-bottom: none;
 }
 
-.activity-icon {
+.profile-section .profile-content .tab-pane .overview-grid .overview-card .activity-list .activity-item .activity-icon {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -1395,39 +1396,39 @@ footer > p {
     font-size: 1.2rem;
 }
 
-.activity-content p {
+.profile-section .profile-content .tab-pane .overview-grid .overview-card .activity-list .activity-item .activity-content p {
     margin: 0;
     color: #333;
     font-weight: 500;
 }
 
-.activity-content small {
+.profile-section .profile-content .tab-pane .overview-grid .overview-card .activity-list .activity-item .activity-content small {
     color: #666;
     font-size: 0.8rem;
 }
 
-.profile-summary p {
+.profile-section .profile-content .tab-pane .overview-grid .overview-card .profile-summary p {
     margin: 8px 0;
     color: #555;
 }
 
-.status-active {
+.profile-section .profile-content .tab-pane .overview-grid .overview-card .status-active {
     color: #28a745;
     font-weight: 600;
 }
 
-.poems-section h3 {
+.profile-section .profile-content .tab-pane .poems-section h3 {
     color: #333;
     margin-bottom: 20px;
     font-size: 1.5rem;
 }
 
-.poems-list {
+.profile-section .profile-content .tab-pane .poems-list {
     display: grid;
     gap: 20px;
 }
 
-.poem-card {
+.profile-section .profile-content .tab-pane .poems-list .poem-card {
     padding: 20px;
     border: 1px solid #f0f0f0;
     border-radius: 10px;
@@ -1435,7 +1436,7 @@ footer > p {
     position: relative;
 }
 
-.poem-card blockquote {
+.profile-section .profile-content .tab-pane .poems-list .poem-card blockquote {
     margin: 0 0 10px 0;
     font-style: italic;
     color: #333;
@@ -1443,34 +1444,34 @@ footer > p {
     line-height: 1.6;
 }
 
-.poem-card footer {
+.profile-section .profile-content .tab-pane .poems-list .poem-card footer {
     color: #c9691a;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
-.poem-date {
+.profile-section .profile-content .tab-pane .poems-list .poem-card .poem-date {
     color: #666;
     font-size: 0.8rem;
 }
 
-.settings-section h3 {
+.profile-section .profile-content .tab-pane .settings-section h3 {
     color: #333;
     margin-bottom: 25px;
     font-size: 1.5rem;
 }
 
-.settings-form {
+.profile-section .profile-content .tab-pane .settings-form {
     max-width: 500px;
 }
 
-.form-actions {
+.profile-section .profile-content .tab-pane .settings-form .form-actions {
     display: flex;
     gap: 15px;
     margin-top: 30px;
 }
 
-.save-btn {
+.profile-section .profile-content .tab-pane .settings-form .form-actions .save-btn {
     padding: 12px 24px;
     background: #c9691a;
     color: white;
@@ -1481,11 +1482,11 @@ footer > p {
     transition: background 0.3s ease;
 }
 
-.save-btn:hover {
+.profile-section .profile-content .tab-pane .settings-form .form-actions .save-btn:hover {
     background: #b85c15;
 }
 
-.logout-btn {
+.profile-section .profile-content .tab-pane .settings-form .form-actions .logout-btn {
     padding: 12px 24px;
     background: #dc3545;
     color: white;
@@ -1496,12 +1497,12 @@ footer > p {
     transition: background 0.3s ease;
 }
 
-.logout-btn:hover {
+.profile-section .profile-content .tab-pane .settings-form .form-actions .logout-btn:hover {
     background: #c82333;
 }
 
-.no-activity,
-.no-poems {
+.profile-section .profile-content .tab-pane .no-activity,
+.profile-section .profile-content .tab-pane .no-poems {
     text-align: center;
     color: #666;
     font-style: italic;
@@ -1509,37 +1510,38 @@ footer > p {
 }
 
 @media (max-width: 768px) {
-    .profile-header {
+    .profile-section .profile-header {
         flex-direction: column;
         text-align: center;
         gap: 20px;
     }
 
-    .profile-stats {
+    .profile-section .profile-header .profile-stats {
         justify-content: center;
     }
 
-    .overview-grid {
+    .profile-section .profile-content .tab-pane .overview-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .profile-tabs {
+    .profile-section .profile-content .profile-tabs {
         flex-wrap: wrap;
     }
 
-    .tab-btn {
+    .profile-section .profile-content .profile-tabs .tab-btn {
         flex: 1;
         min-width: 120px;
     }
 
-    .form-actions {
+    .profile-section .profile-content .tab-pane .settings-form .form-actions {
         flex-direction: column;
     }
 
-    .activity-item {
+    .profile-section .profile-content .tab-pane .overview-grid .overview-card .activity-list .activity-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
     }
 }
+
