@@ -1,7 +1,6 @@
-- [x] Update CSS colors to gray theme (change orange accents to gray shades)
-- [x] Fix parallax effect in main.js (ensure smooth scrolling and correct class usage)
-- [x] Test changes by opening index.html in browser
-- [x] Update About section background to gray
-- [x] Update Poetry wall background to gray
-- [x] Update Collaboration section background to gray
-- [x] Change remaining orange colors to gray shades in CSS
+- [x] Create auth.html page with signup and signin forms
+- [x] Add authentication styles to style.css
+- [x] Add authentication JavaScript functionality
+- [x] Update README.md with comprehensive project details
+- [ ] Test authentication page functionality
+- [ ] Push changes to main branch
